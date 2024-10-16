@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TaskPage extends StatefulWidget {
+class DaftarTugas extends StatefulWidget {
   @override
-  _TaskPageState createState() => _TaskPageState();
+  _DaftarTugasState createState() => _DaftarTugasState();
 }
 
-class _TaskPageState extends State<TaskPage> {
+class _DaftarTugasState extends State<DaftarTugas> {
   List<Map<String, dynamic>> tasks = [
     {
       'title': 'Bersihkan ruangan RT05',
