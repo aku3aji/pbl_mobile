@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DaftarTugas extends StatefulWidget {
+  const DaftarTugas({super.key});
+
   @override
   _DaftarTugasState createState() => _DaftarTugasState();
 }
@@ -73,7 +75,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: Colors.yellow,
               borderRadius: BorderRadius.circular(10),
@@ -82,7 +84,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
@@ -90,7 +92,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
+                const Text(
                   'Filter Berdasarkan',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -98,18 +100,18 @@ class _DaftarTugasState extends State<DaftarTugas> {
                     color: Color(0xFF4B367C),
                   ),
                 ),
-                SizedBox(height: 10),
-                Text('Berdasarkan Status'),
-                SizedBox(height: 5),
-                Text('Berdasarkan Bobot Jam/Poin: Dari Kecil - Besar'),
-                SizedBox(height: 5),
-                Text('Berdasarkan Bobot Jam/Poin: Dari Besar - Kecil'),
-                SizedBox(height: 16),
+                const SizedBox(height: 10),
+                const Text('Berdasarkan Status'),
+                const SizedBox(height: 5),
+                const Text('Berdasarkan Bobot Jam/Poin: Dari Kecil - Besar'),
+                const SizedBox(height: 5),
+                const Text('Berdasarkan Bobot Jam/Poin: Dari Besar - Kecil'),
+                const SizedBox(height: 16),
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Tutup'),
+                  child: const Text('Tutup'),
                 ),
               ],
             ),
@@ -123,8 +125,8 @@ class _DaftarTugasState extends State<DaftarTugas> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 42, 6, 127),
-        title: Text(
+        backgroundColor: const Color.fromARGB(255, 42, 6, 127),
+        title: const Text(
           'DAFTAR TUGAS',
           style: TextStyle(
             fontSize: 24,
@@ -133,7 +135,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.white,
           ),
@@ -141,7 +143,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
         ),
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.account_circle,
               color: Colors.white,
             ),
@@ -152,7 +154,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -166,17 +168,17 @@ class _DaftarTugasState extends State<DaftarTugas> {
           ),
           Center(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-              padding: EdgeInsets.all(16),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 89, 58, 132),
+                color: const Color.fromARGB(255, 89, 58, 132),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
@@ -193,12 +195,12 @@ class _DaftarTugasState extends State<DaftarTugas> {
                               color: Colors.black.withOpacity(0.3),
                               spreadRadius: 2,
                               blurRadius: 5,
-                              offset: Offset(0, 3),
+                              offset: const Offset(0, 3),
                             ),
                           ],
                         ),
                         child: IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.filter_list,
                             size: 30,
                             color: Colors.black,
@@ -206,12 +208,12 @@ class _DaftarTugasState extends State<DaftarTugas> {
                           onPressed: _showFilterDialog,
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: TextField(
                           decoration: InputDecoration(
                             hintText: 'Cari...',
-                            suffixIcon: Icon(Icons.search),
+                            suffixIcon: const Icon(Icons.search),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -222,7 +224,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Expanded(
                     child: ListView.builder(
                       itemCount: tasks.length,
@@ -231,7 +233,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          margin: EdgeInsets.symmetric(vertical: 10),
+                          margin: const EdgeInsets.symmetric(vertical: 10),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
@@ -245,7 +247,7 @@ class _DaftarTugasState extends State<DaftarTugas> {
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                SizedBox(width: 16),
+                                const SizedBox(width: 16),
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment:
@@ -253,37 +255,37 @@ class _DaftarTugasState extends State<DaftarTugas> {
                                     children: [
                                       Text(
                                         tasks[index]['title'],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16),
                                       ),
-                                      SizedBox(height: 4),
+                                      const SizedBox(height: 4),
                                       Text(
                                         tasks[index]['description'],
-                                        style: TextStyle(fontSize: 12),
+                                        style: const TextStyle(fontSize: 12),
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                       ),
-                                      SizedBox(height: 8),
+                                      const SizedBox(height: 8),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             tasks[index]['lecturer'],
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 12,
                                                 color: Colors.grey),
                                           ),
                                           Text(
                                             tasks[index]['time'],
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 12,
                                                 color: Colors.grey),
                                           ),
                                           Text(
                                             tasks[index]['due'],
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 12,
                                                 color: Colors.grey),
                                           ),

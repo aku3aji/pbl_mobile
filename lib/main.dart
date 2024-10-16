@@ -1,33 +1,29 @@
 import 'package:flutter/material.dart';
 import 'daftar_tugas.dart';
 import 'status_penugasan.dart';
+import 'status_tugas.dart';
+import 'proses_pengerjaan.dart';
+import 'riwayat_tugas.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Daftar Tugas',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: DaftarTugas(),
-//     );
-//   }
-// }
-
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Status Penugasan',
+      title: 'Daftar',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StatusPenugasan(), // Ganti ini dari DaftarTugas ke StatusPenugasan
+      home: DaftarTugas(),
+      // home: StatusTugas(),
+      // home: ProsesPengerjaan(),
+      // home: StatusPenugasan(),
+      // home: RiwayatTugas(),
     );
   }
 }

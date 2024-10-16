@@ -1,42 +1,36 @@
 import 'package:flutter/material.dart';
 
-class StatusPenugasan extends StatefulWidget {
-  const StatusPenugasan({super.key});
+class RiwayatTugas extends StatefulWidget {
+  const RiwayatTugas({super.key});
 
   @override
-  _StatusPenugasanState createState() => _StatusPenugasanState();
+  _RiwayatTugasState createState() => _RiwayatTugasState();
 }
 
-class _StatusPenugasanState extends State<StatusPenugasan> {
+class _RiwayatTugasState extends State<RiwayatTugas> {
   List<Map<String, dynamic>> tasks = [
     {
-      'title': 'Bersihkan ruangan RT05',
-      'person_in_charge': 'Tiaji Ibnu Hermawan',
-      'due_date': 'DD-MM-YYYY',
+      'title': 'Bersihkan Ruangan RT05',
+      'description': 'Rapikan dan bersihkan ruangan, dan... ',
+      'person_in_charge': 'Usman Nurhasan, S.Kom., M.T.',
+      'due_date': '12-03-2024',
+      'status': 'Ditinjau',
       'image': 'assets/room_image.png',
     },
     {
-      'title': 'Bersihkan ruangan RT05',
-      'person_in_charge': 'Tiaji Ibnu Hermawan',
-      'due_date': 'DD-MM-YYYY',
+      'title': 'Bersihkan Ruangan RT05',
+      'description': 'Rapikan dan bersihkan ruangan, dan... ',
+      'person_in_charge': 'Usman Nurhasan, S.Kom., M.T.',
+      'due_date': '12-03-2024',
+      'status': 'Selesai',
       'image': 'assets/room_image.png',
     },
     {
-      'title': 'Bersihkan ruangan RT05',
-      'person_in_charge': 'Tiaji Ibnu Hermawan',
-      'due_date': 'DD-MM-YYYY',
-      'image': 'assets/room_image.png',
-    },
-    {
-      'title': 'Bersihkan ruangan RT05',
-      'person_in_charge': 'Tiaji Ibnu Hermawan',
-      'due_date': 'DD-MM-YYYY',
-      'image': 'assets/room_image.png',
-    },
-    {
-      'title': 'Bersihkan ruangan RT05',
-      'person_in_charge': 'Tiaji Ibnu Hermawan',
-      'due_date': 'DD-MM-YYYY',
+      'title': 'Bersihkan Ruangan RT05',
+      'description': 'Rapikan dan bersihkan ruangan, dan... ',
+      'person_in_charge': 'Usman Nurhasan, S.Kom., M.T.',
+      'due_date': '12-03-2024',
+      'status': 'Pengerjaan',
       'image': 'assets/room_image.png',
     },
   ];
@@ -47,7 +41,7 @@ class _StatusPenugasanState extends State<StatusPenugasan> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 42, 6, 127),
         title: const Text(
-          'STATUS PENUGASAN',
+          'RIWAYAT TUGAS',
           style: TextStyle(
             fontSize: 24,
             color: Colors.white,
@@ -158,15 +152,33 @@ class _StatusPenugasanState extends State<StatusPenugasan> {
                                       ),
                                       const SizedBox(height: 4),
                                       Text(
-                                        tasks[index]['person_in_charge'],
+                                        tasks[index]['description'],
                                         style: const TextStyle(fontSize: 12),
                                       ),
                                       const SizedBox(height: 8),
                                       Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.start,
                                         children: [
-                                          const Text(
+                                          Text(
+                                            '',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.grey),
+                                          ),
+                                          Text(
+                                            tasks[index]['person_in_charge'],
+                                            style: const TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.grey),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Text(
                                             'Tanggal Penyelesaian:',
                                             style: TextStyle(
                                                 fontSize: 12,
@@ -174,6 +186,24 @@ class _StatusPenugasanState extends State<StatusPenugasan> {
                                           ),
                                           Text(
                                             tasks[index]['due_date'],
+                                            style: const TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.grey),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            'Status:',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Colors.grey),
+                                          ),
+                                          Text(
+                                            tasks[index]['status'],
                                             style: const TextStyle(
                                                 fontSize: 12,
                                                 color: Colors.grey),
